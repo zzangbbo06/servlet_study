@@ -1,1 +1,25 @@
-/.metadata/
+##### MacOS #####
+.DS_Store
+##### IntelliJ #####
+.idea
+*.iml
+out
+##### Visual Studio Code #####
+.vscode
+##### Eclipse #####
+.metadata
+.settings
+bin
+.project
+Servers/
+접기
+
+
+
+
+
+
+
+
+
+
