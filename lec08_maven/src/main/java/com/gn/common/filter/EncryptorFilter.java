@@ -8,6 +8,8 @@ import jakarta.servlet.ServletRequest;
 import jakarta.servlet.ServletResponse;
 import jakarta.servlet.annotation.WebFilter;
 import jakarta.servlet.http.HttpFilter;
+import jakarta.servlet.http.HttpServletRequest;
+
 import java.io.IOException;
 
 /**
@@ -35,11 +37,8 @@ public class EncryptorFilter extends HttpFilter implements Filter {
 	 * @see Filter#doFilter(ServletRequest, ServletResponse, FilterChain)
 	 */
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
-		// TODO Auto-generated method stub
-		// place your code here
-
-		// pass the request along the filter chain
-		chain.doFilter(request, response);
+		PasswordEncryptorWrapper pew = new PasswordEncryptorWrapper((HttpServletRequest)request);
+		chain.doFilter(pew, response);
 	}
 
 	/**

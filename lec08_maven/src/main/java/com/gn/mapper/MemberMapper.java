@@ -1,8 +1,9 @@
 package com.gn.mapper;
 
-import java.lang.reflect.Member;
+import com.gn.dto.Member;
 
 public interface MemberMapper {
 	
 	int insert(Member member);
+	Member selectMember(Member param);
 }
