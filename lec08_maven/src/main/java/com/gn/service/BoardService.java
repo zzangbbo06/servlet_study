@@ -12,10 +12,23 @@ import com.gn.dto.Board;
 public class BoardService {
 	private BoardDao boardDao = new BoardDao();
 	
-	public List<Board> selectBoardList(){
-		return boardDao.selectBoardList();
+	public List<Board> selectBoardList(Board param){
+		return boardDao.selectBoardList(param);
 	}
-
+	
+	public int selectBoardCount(Board param) {
+		return boardDao.selectBoardcount(param);
+	}
+	public Board selectBoardOne(int boardNo) {
+		return boardDao.selectBoardOne(boardNo);
+	}
+	public Attach selectAttachByBoardNo(int boardNo) {
+		return boardDao.selectAttachByBoardNo(boardNo);
+	}
+	
+	public Attach selectAttachByAttachNo(int attachNo) {
+		return boardDao.selectAttachByAttachNo(attachNo);
+	}
 	// 게시글 + 파일 트랜젝션 처리
 	public int createBoardWithAttach(Board board, Attach attach) {
 		SqlSession session = SqlSessionTemplate.getSqlSession(false);

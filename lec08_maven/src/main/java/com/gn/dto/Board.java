@@ -1,15 +1,13 @@
 package com.gn.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import com.gn.common.vo.Paging;
 
-@Getter
-@Setter
-@AllArgsConstructor
-@NoArgsConstructor
-public class Board {
+
+import lombok.Data;
+
+
+@Data
+public class Board extends Paging{
 	private int boardNo;
 	private String boardTitle;
 	private String boardContent;
@@ -17,5 +15,8 @@ public class Board {
 	
 	private String regDate;
 	private String modDate;
+	
+	private String memberId;
+	private String keyword;
 	
 }

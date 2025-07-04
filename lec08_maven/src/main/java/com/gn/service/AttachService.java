@@ -15,7 +15,7 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.Part;
 
-public class AttachService {
+public class AttachService {	
 	// 1. 업로드할 디렉토리 반환
 	public static File getUploadDirectory() {
 		String dirPath="C://upload/board";
